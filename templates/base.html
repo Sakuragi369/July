@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
+  <title>Sestoji Planeta UAB</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/static/js/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="/static/css/responsiveslides.css" rel="stylesheet">
+  <link href="/static/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="head">
+      <nav class="navbar navbar-fixed-top">
+        <div class="container" style="margin-top: 10px;">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">Menu
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+            <a href="index.html"><img class="navbar-brand" src="/static/img/logo.png"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">CanDo</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div id="footer">
+      <footer>
+        <div class="container">
+          <label>Copyright © 2016 6thPlanetha · All Right Reserved</label>
+        </div>
+      </footer>
+    </div>
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/static/js/holder.min.js"></script>
+  <script src="/static/js/parallax.min.js"></script>
+  <script src="/static/js/jquery.easing.min.js"></script>
+  <script src="/static/js/jquery.easy-ticker.min.js"></script>
+  <script src="/static/js/responsiveslides.min.js"></script>
+    <script>
+        function scroll_style() {
+          var window_top = $(window).scrollTop();
+          //var sliderSize =  $(".slider").height()
+          if(window_top > 2){
+            $(".navbar").addClass("change");
+            $(".navbar-brand").attr("src", "/static/img/logo.png");
+          }else{
+             $(".navbar").removeClass( "change" );
+             $(".navbar-brand").attr("src", "/static/img/logo2.png");
+          }
+        }
+        function fitBanner(){
+          var windowWidth =  $(window).width()
+          var sliderSize = 0
+           if(windowWidth<970){
+              sliderSize =  $("#sliderMini").height()
+           }
+           else{
+             sliderSize =  $("#slider").height()
+           }
+         $('.slidderBanner').css("margin-top", sliderSize - 65);
+        }
+      $(function(){
+
+        $(window).scroll(scroll_style);
+         scroll_style();
+        $(window).resize(fitBanner);
+
+        var windowWidth =  $(window).width()
+        if(windowWidth<970){
+          $('#slider').remove()
+          $('#sliderMini').responsiveSlides({
+          auto: true,
+          pager: false,
+          nav: false,
+          speed: 500,
+          namespace: "callbacks",
+          before: function () {
+          },
+          after: function () {
+          }
+        });
+        }else{
+           $('#sliderMini').remove()
+           $('#slider').responsiveSlides({
+          auto: true,
+          pager: false,
+          nav: false,
+          speed: 500,
+          namespace: "callbacks",
+          before: function () {
+          },
+          after: function () {
+          }
+        });
+        }
+
+        $('.newsSlidder').easyTicker({
+          direction: 'up',
+          easing: 'swing',
+          visible: 3
+        });
+         fitBanner();
+        $.get("http://query.yahooapis.com/v1/public/yql?q=select%20title%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.zdnet.com%2Fnews%2Frss.xml%22&format=json&callback=cbfunc", function(data) {
+            console.log(data);
+            debugger;
+            var $xml = $(data);
+            $xml.find("item").each(function() {
+                var $this = $(this),
+                    item = {
+                        title: $this.find("title").text(),
+                        link: $this.find("link").text(),
+                        description: $this.find("description").text(),
+                        pubDate: $this.find("pubDate").text(),
+                        author: $this.find("author").text()
+                }
+                //Do something with item here...
+            });
+        });
+        var xxx = "http://query.yahooapis.com/v1/public/yql?q=select%20title%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.zdnet.com%2Fnews%2Frss.xml%22&format=json&callback=cbfunc"
+       $.getJSON( xxx, function( data ) {
+         debugger;
+          console.log(data)
+       });
+
+
+    });
+	</script>
+</body>
+</html>
