@@ -1,58 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" -webkit-">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
-  <!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
   <title>Sestoji Planeta UAB</title>
-  <!-- Bootstrap core CSS -->
   <link href="/static/js/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link href="/static/css/responsiveslides.css" rel="stylesheet">
-  <link href="/static/css/custom.css" rel="stylesheet">
 </head>
 
-<body>
-    <div id="head">
-      <nav class="navbar navbar-fixed-top">
-        <div class="container" style="margin-top: 10px;">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-              aria-controls="navbar">Menu
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-            <a href="index.html"><img class="navbar-brand" src="/static/img/logo.png"></a>
+<body class="scrolled scrolledmore">
+{#    <!-- Mobile top bar -->#}
+{#    <div class="mobile-bar">#}
+{#       <div class="logobox">#}
+{#           <a href="">#}
+{#               <img class="logo" src="/static/img/logo-greenback-mobile.png" alt="Greenback">#}
+{#           </a>#}
+{#       </div>#}
+{#       <div class="mobile-menu">#}
+{#         <button type="button" class="navbar-toggle btn-mobilemenu">#}
+{#           <span class="sr-only">Toggle navigation</span>#}
+{#           <span class="title">MENU</span>#}
+{#           <span class="bars">#}
+{#             <span class="icon-bar icon-bar1"></span>#}
+{#             <span class="icon-bar icon-bar2"></span>#}
+{#             <span class="icon-bar icon-bar3"></span>#}
+{#           </span>#}
+{#         </button>#}
+{#       </div>#}
+{#    </div>#}
+{#    <div class="overlay"></div>#}
+
+    <header class="header">
+        <nav class="navbar navbar-default">
+         <div class="container-fluid">
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-side" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a href="#" class="btn-closemenu"><i class="icon-x"></i></a>
+             <a class="navbar-brand" href="/">
+                 <img style="width: 160px;height: 52px;display: inline-block;" src="/static/img/logo-greenback.png" alt="Greenback">
+                 <!--<span class="tagline">Beyond Credit Card Statements</span>-->
+             </a>
+           </div>
+
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="mobile-side">
+             <ul class="nav navbar-nav navbar-right">
+               <li><a href="">Features</a></li>
+               <li><a href="">Integrations</a></li>
+               <li><a href="">Security</a></li>
+               <li><a href="">About</a></li>
+               <li><a href="">Contact</a></li>
+               <li class="sec"><a href="" class="btn btn-head-signin">Sign In</a></li>
+               <li class="sec"><a href="" class="btn btn-head-signup">Sign Up</a></li>
+             </ul>
+
+{#             <ul class="list-unstyled list-mobilebtns">#}
+{#               <li><a href="" class="btn btn-outline btn-head-signin">Sign In</a></li>#}
+{#               <li><a href="" class="btn btn-primary btn-head-signup">Sign Up</a></li>#}
+{#             </ul>#}
+           </div><!-- /.navbar-collapse -->
+         </div><!-- /.container-fluid -->
+       </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+    <div style="margin-top: 500px; margin-bottom: 100px;">
+        aaaaaaa
+    </div>
+
+    <footer class="footer" style="margin-bottom: 30px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="foot-logo">
+              <img style="max-width: 130px; height: auto;" src="/static/img/logo-greenback-grey-full.png" alt="Greenback">
+            </div>
           </div>
-          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">CanDo</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">FAQ</a></li>
+          <div class="col-sm-5" style="align-content: center;">
+            <ul class="list-inline list-menu">
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="">Security</a></li>
+              <li><a href="">Terms</a></li>
+              <li><a href="">Privacy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-inline list-soc">
+              <li><a href="https://twitter.com"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://github.com/"><i class="icon-github"></i></a></li>
             </ul>
           </div>
         </div>
-      </nav>
-    </div>
-
-    <div id="footer">
-      <footer>
-        <div class="container">
-          <label>Copyright © 2016 6thPlanetha · All Right Reserved</label>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -61,94 +111,5 @@
   <script src="/static/js/jquery.easing.min.js"></script>
   <script src="/static/js/jquery.easy-ticker.min.js"></script>
   <script src="/static/js/responsiveslides.min.js"></script>
-    <script>
-        function scroll_style() {
-          var window_top = $(window).scrollTop();
-          //var sliderSize =  $(".slider").height()
-          if(window_top > 2){
-            $(".navbar").addClass("change");
-            $(".navbar-brand").attr("src", "/static/img/logo.png");
-          }else{
-             $(".navbar").removeClass( "change" );
-             $(".navbar-brand").attr("src", "/static/img/logo2.png");
-          }
-        }
-        function fitBanner(){
-          var windowWidth =  $(window).width()
-          var sliderSize = 0
-           if(windowWidth<970){
-              sliderSize =  $("#sliderMini").height()
-           }
-           else{
-             sliderSize =  $("#slider").height()
-           }
-         $('.slidderBanner').css("margin-top", sliderSize - 65);
-        }
-      $(function(){
-
-        $(window).scroll(scroll_style);
-         scroll_style();
-        $(window).resize(fitBanner);
-
-        var windowWidth =  $(window).width()
-        if(windowWidth<970){
-          $('#slider').remove()
-          $('#sliderMini').responsiveSlides({
-          auto: true,
-          pager: false,
-          nav: false,
-          speed: 500,
-          namespace: "callbacks",
-          before: function () {
-          },
-          after: function () {
-          }
-        });
-        }else{
-           $('#sliderMini').remove()
-           $('#slider').responsiveSlides({
-          auto: true,
-          pager: false,
-          nav: false,
-          speed: 500,
-          namespace: "callbacks",
-          before: function () {
-          },
-          after: function () {
-          }
-        });
-        }
-
-        $('.newsSlidder').easyTicker({
-          direction: 'up',
-          easing: 'swing',
-          visible: 3
-        });
-         fitBanner();
-        $.get("http://query.yahooapis.com/v1/public/yql?q=select%20title%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.zdnet.com%2Fnews%2Frss.xml%22&format=json&callback=cbfunc", function(data) {
-            console.log(data);
-            debugger;
-            var $xml = $(data);
-            $xml.find("item").each(function() {
-                var $this = $(this),
-                    item = {
-                        title: $this.find("title").text(),
-                        link: $this.find("link").text(),
-                        description: $this.find("description").text(),
-                        pubDate: $this.find("pubDate").text(),
-                        author: $this.find("author").text()
-                }
-                //Do something with item here...
-            });
-        });
-        var xxx = "http://query.yahooapis.com/v1/public/yql?q=select%20title%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.zdnet.com%2Fnews%2Frss.xml%22&format=json&callback=cbfunc"
-       $.getJSON( xxx, function( data ) {
-         debugger;
-          console.log(data)
-       });
-
-
-    });
-	</script>
 </body>
 </html>
