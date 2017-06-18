@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'wechat',
     'blog',
+    'school_yearbook',
 )
 
 MIDDLEWARE_CLASSES = (
